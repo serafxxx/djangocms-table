@@ -14,9 +14,10 @@ var Handsontable = { //class namespace
   extension: {}, //extenstion namespace
   helper: {} //helper namespace
 };
-
+var jQueryHands;
 (function ($, window, Handsontable) {
   "use strict";
+  window.jQueryHands = $;
 /**
  * Handsontable constructor
  * @param rootElement The jQuery element in which Handsontable DOM will be inserted
@@ -4607,7 +4608,7 @@ Handsontable.PluginHooks.push('afterGetCellMeta', function (row, col, cellProper
 
   };
 
-})(jQuery);
+})($);
 /*! Copyright (c) 2011 Brandon Aaron (http://brandonaaron.net)
  * Licensed under the MIT License (LICENSE.txt).
  *
@@ -4691,7 +4692,7 @@ function handler(event) {
     return ($.event.dispatch || $.event.handle).apply(this, args);
 }
 
-})(jQuery);
+})($);
 
 /**
  * SheetClip - Spreadsheet Clipboard Parser
